@@ -3,8 +3,6 @@ const{expect,test}=require("@playwright/test")
 test("qspr page",async({page})=>{
     await page.goto(" https://demoapps.qspiders.com/")
 
-    //test.use({viewport:{width:1500,height:800}})
-
     await page.getByText("Quick Start").click()
 
     await page.getByLabel("Name").fill("yuvaraj")
@@ -14,8 +12,6 @@ test("qspr page",async({page})=>{
     await page.locator("id=password").fill("123456")
 
     await page.locator("xpath=//button[text()='Register']").click()
-
-   // await expect(page.getByText("Registration Successful")).toBeVisible()
 
     await page.close()
 })
