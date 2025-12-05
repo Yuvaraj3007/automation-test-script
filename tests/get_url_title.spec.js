@@ -5,7 +5,7 @@ test("verifying",async({page})=>{
    await page.goto("https://in.bookmyshow.com/explore/home/coimbatore ")
 
    const url=await page.url()
-   console.log("url of the page is:"+url)
+   console.log("url of the page:"+url)
 
 
     const title= await page.title()
