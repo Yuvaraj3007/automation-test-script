@@ -8,10 +8,11 @@ test("demoweb",async({page})=>{
     await page.getByLabel("Email").fill("yyyyyyyyyyyuva2@gmail.com")
     await page.getByLabel("Password").fill("123456")
     await page.getByRole("button",{name:"log in"}).click()
-
-    await expect(page.getByText("Welcome to our store")).toBeVisible()
     await page.locator("xpath=(//input[@type='button'])[1]").click()
 
+    
+    await expect(page.getByText("Welcome to our store")).toBeVisible()
+    
     await page.close()
 
 })
