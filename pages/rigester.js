@@ -14,7 +14,7 @@ export class registerpage{
     async goto(){
         await this.page.goto("https://demowebshop.tricentis.com/register");
     }
-    async refisteruser(fname,lname,email,password,confirmpassword){
+    async registeruser(fname,lname,email,password,confirmpassword){
         await this.page.locator(this.gender).click()
         await this.page.locator(this.fname).fill(fname)
         await this.page.locator(this.lname).fill(lname)

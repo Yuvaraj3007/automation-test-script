@@ -1,4 +1,4 @@
-const{test,expect}= require("@playwright/test");
+const{test,expect}= require("@playwright/test")
 
 test("application title",async({page})=>{
      await page.goto("https://www.flipkart.com/")
