@@ -24,28 +24,3 @@ test('post with token', async ({ request }) => {
 
 })
 
-// const { test, expect } = require("@playwright/test");
-
-// test("post with token", async ({ request }) => {
-
-//     const response = await request.post(
-//         "https://restful-booker.herokuapp.com/auth",
-//         {
-//             data: {
-//                 username: "admin",
-//                 password: "password123"
-//             },
-//             headers: {
-//                 "Content-Type": "application/json"
-//             }
-//         }
-//     );
-
-//     expect(response.ok()).toBeTruthy();
-
-//     const resjson = await response.json();
-//     console.log("Response JSON: ", resjson);
-
-//     const token = resjson.token;
-//     console.log("Token: ", token);
-// });
