@@ -1,17 +1,21 @@
-const{test,expect}=require('@playwright/test')
-const{reusecode}=require('../../pages/helper/auth.spec')
 
-test('use the code for auth',async({request})=>{
+const { test, expect } = require('@playwright/test');
+const { getAuthToken } = require('../../pages/helper/auth');
 
-    const tokenbymethod= await reusecode()
+test('Get booking with auth token', async ({ request }) => {
+  const token = await getAuthToken();
 
-   const response= request.get('https://restful-booker.herokuapp.com/booking/1',
-        {headers:{
-            "accept":"application/json",
-            "authentication":`${tokenbymethod}`
-        },
-  })
+  const response = await request.get(
+    'https://restful-booker.herokuapp.com/booking/1',
+    {
+      headers: {
+        Cookie: `token=${token}`
+      }
+    }
+  );
 
-  //expect ((await response).status()).toBe(200)
+  expect(response.status()).toBe(200);
 
-})
+  const body = await response.json();
+  expect(body.firstname).toBeDefined();
+});

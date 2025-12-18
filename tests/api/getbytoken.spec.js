@@ -9,6 +9,4 @@ test('login using API', async ({ page }) => {
 
   expect(response.ok()).toBeTruthy();
 
-  await page.goto('/dashboard');
-  // User is already logged in
 });
